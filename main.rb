@@ -68,7 +68,7 @@ response = menu
       end
       client_index = gets.chomp.to_i
         b1.clients[client_index].portfolios << new_portfolio
-        
+
 
     when '3'
       system "clear"
@@ -81,7 +81,7 @@ response = menu
       stock_code = gets.chomp
       puts 'How many shares do you want to purchase?'
       no_of_shares = gets.chomp.to_i
-      stocks_pool.index(stock_code)
+      # stocks_pool.index(stock_code)
       binding.pry
      
       
@@ -90,7 +90,10 @@ response = menu
     when '4' 
       puts 'Sell Stocks'
     when '5'
-      puts "List all clients and their balances"
+      b1.clients.each do |client|
+        puts "#{client.name}  £#{client.balance}"
+      end
+
     when '6' 
       puts "List a client's portfolios and associated values"
     when '7'

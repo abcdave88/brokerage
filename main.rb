@@ -64,10 +64,11 @@ response = menu
       new_portfolio = Portfolio.new name: port_name
       puts 'Asign portfolio to:'
       b1.clients.each_with_index do |client, index|
-      client.portfolios << new_portfolio
-      binding.pry
+        puts"(#{index}) #{client.name}\n"
       end
-      
+      client_index = gets.chomp.to_i
+        b1.clients[client_index].portfolios << new_portfolio
+        
 
     when '3'
       system "clear"
